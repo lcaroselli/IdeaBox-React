@@ -5,7 +5,7 @@ export default function Form(props) {
     <form>
       <input type="text" placeholder="Title"></input>
       <input type="textarea" placeholder="Body"></input>
-      <button>Save</button>
+      <button className="save-button">save</button>
     </form>
   )
 }
