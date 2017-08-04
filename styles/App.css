@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #E5F3F2;
+  height: 200px;
+  padding: 20px;
+}
+
+.box-header {
+  color: #6D6E71;
+  margin-bottom: 0;
+}
+
+.idea-header {
+  color: #00A79D;
+}
+
+.react-header {
+  font-size: 10px;
+}
