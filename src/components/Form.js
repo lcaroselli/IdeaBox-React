@@ -6,13 +6,15 @@ export default function Form(props) {
       <input
         type="text"
         placeholder="Title"
-        value={ props.inputValue }>
+        value={ props.inputValueTitle }
+        onChange = { props.onChange }>
       </input>
 
       <input
         type="textarea"
         placeholder="Body"
-        value={ props.inputValue }>
+        value={ props.inputValueBody }
+        onChange = { props.onChange }>
       </input>
 
       {

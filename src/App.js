@@ -9,30 +9,41 @@ import IdeaCard from './components/IdeaCard.js';
 export default class App extends React.Component {
   constructor() {
     super();
-
     this.state = {
-      newIdea: '',
+      newIdea: {
+        title: '',
+        body: '',
+        quality: 'swill'
+      },
       ideaList: []
     }
   }
 
   addIdea(e) {
-    e.preventDefault()
+    e.preventDefault();
     this.setState({
-      newIdea: 'New',
+      newIdea: {
+        title: '',
+        body: '',
+        quality: 'swill'
+      },
       ideaList: [...this.state.ideaList, {
-        title: this.state.newIdea,
-        body: this.state.newIdea,
-        quality: this.state.newIdea
+        title: this.state.newIdea.title,
+        body: this.state.newIdea.body,
+        quality: this.state.newIdea.quality,
         }]
     })
   }
 
-  // handleChange(e) {
-  //   this.setState({
-  //     newIdea: e.target.value
-  //     })
-  // }
+  handleChange(e) {
+    this.setState({
+      newIdea: {
+        title: e.target.value,
+        body: e.target.value,
+        quality: 'swill'
+      }
+    })
+  }
 
   render() {
     return (
@@ -41,8 +52,10 @@ export default class App extends React.Component {
           <h2 className="box-header"><span className="idea-header">Idea</span>Box</h2>
           {
             <Form
-            inputValue = { this.state.newIdea }
-            addNewIdea = { this.addIdea.bind(this) } />
+            inputValueTitle = { this.state.newIdea.title }
+            inputValueBody = { this.state.newIdea.body }
+            addNewIdea = { this.addIdea.bind(this) }
+            onChange = { this.handleChange.bind(this) } />
           }
         </div>
         <div className="App-list">
