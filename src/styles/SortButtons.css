@@ -1,1 +1,19 @@
 /*button hover states and general styling*/
+.sort-button {
+  border: none;
+  background-color:#00A79D;
+  color: #FFFFFF;
+  height: 20px;
+  margin-right: 10px;
+  width: 60px;
+}
+
+.sort-button:hover {
+  background-color: #045E55;
+  cursor: pointer;
+}
+
+.sort-text {
+  font-size: 10px;
+  margin-top: 36px;
+}

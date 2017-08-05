@@ -1,10 +1,12 @@
 import React from 'react';
 import stylesApp from './styles/App.css';
 import stylesForm from './styles/Form.css';
+import stylesButtons from './styles/SortButtons.css';
 import stylesIdeaCard from './styles/IdeaCard.css'; //may not need to import here?
 import Form from './components/Form.js';
 import Search from './components/Search.js';
 import IdeaCard from './components/IdeaCard.js';
+import SortButtons from './components/SortButtons.js';
 
 export default class App extends React.Component {
   constructor() {
@@ -19,7 +21,7 @@ export default class App extends React.Component {
     }
   }
 
-  addIdea(e) {
+  addIdea(e, newIdea) {
     e.preventDefault();
     this.setState({
       newIdea: {
@@ -27,20 +29,19 @@ export default class App extends React.Component {
         body: '',
         quality: 'swill'
       },
+
       ideaList: [...this.state.ideaList, {
         title: this.state.newIdea.title,
         body: this.state.newIdea.body,
-        quality: this.state.newIdea.quality,
-        }]
+        quality: 'swill',
+      }]
     })
   }
 
   handleChange(e) {
     this.setState({
       newIdea: {
-        title: e.target.value,
-        body: e.target.value,
-        quality: 'swill'
+      [e.target.name]: e.target.value
       }
     })
   }
@@ -56,6 +57,9 @@ export default class App extends React.Component {
             inputValueBody = { this.state.newIdea.body }
             addNewIdea = { this.addIdea.bind(this) }
             onChange = { this.handleChange.bind(this) } />
+          }
+          {
+            <SortButtons />
           }
         </div>
         <div className="App-list">
