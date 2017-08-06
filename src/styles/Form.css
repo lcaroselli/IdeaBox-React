@@ -10,9 +10,18 @@ input {
   color: #FFFFFF;
   height: 20px;
   width: 355px;
+  opacity: 0.4;
 }
 
-.save-button:hover {
+.save-button:enabled {
+  opacity: 1;
+}
+
+.save-button:hover:enabled {
   background-color: #045E55;
   cursor: pointer;
+}
+
+.search {
+  border: 0.5px solid #939598;
 }

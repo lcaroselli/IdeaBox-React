@@ -23,19 +23,19 @@ export default class App extends React.Component {
     e.preventDefault();
     this.setState({
       ideaList: [...this.state.ideaList,
-        { title: this.state.title,
+        {
+          title: this.state.title,
           body: this.state.body,
-          quality: 'swill' },
+          quality: 'swill'
+        },
       ],
 
-
-        title: '',
-        body: '',
-        quality: ''
+      title: '',
+      body: ''
     })
   }
 
-  handleChange(e) {  
+  handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     })

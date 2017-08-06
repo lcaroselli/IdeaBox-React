@@ -27,7 +27,7 @@ export default function Form(props) {
 
         <button
         className="save-button"
-        // disabled = { !props.inputValueTitle || !props.inputValueBody }
+        disabled = { !props.inputValueTitle || !props.inputValueBody }
         onClick={ props.addNewIdea }>save</button>
 
     </form>
