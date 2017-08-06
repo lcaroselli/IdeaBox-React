@@ -1,12 +1,12 @@
 import React from 'react';
-import stylesApp from './styles/App.css';
-import stylesButtons from './styles/SortButtons.css';
-import stylesForm from './styles/Form.css';
-import stylesIdeaCard from './styles/IdeaCard.css';
 import Form from './components/Form.js';
 import IdeaCard from './components/IdeaCard.js';
 import Search from './components/Search.js';
 import SortButtons from './components/SortButtons.js';
+import stylesApp from './styles/App.css';
+import stylesButtons from './styles/SortButtons.css';
+import stylesForm from './styles/Form.css';
+import stylesIdeaCard from './styles/IdeaCard.css';
 
 export default class App extends React.Component {
   constructor() {
@@ -15,7 +15,7 @@ export default class App extends React.Component {
       newIdea: {
         title: '',
         body: '',
-        quality: 'swill'
+        quality: ''
       },
       ideaList: []
     }
@@ -24,17 +24,17 @@ export default class App extends React.Component {
   addIdea(e) {
     e.preventDefault();
     this.setState({
-      newIdea: {
-        title: '',
-        body: '',
-        quality: 'swill'
-      },
-
       ideaList: [...this.state.ideaList,
         { title: this.state.newIdea.titleinput,
           body: this.state.newIdea.bodyinput,
           quality: 'swill' },
-      ]
+      ],
+
+      newIdea: {
+        title: '',
+        body: '',
+        quality: ''
+      }
     })
   }
 

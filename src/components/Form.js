@@ -10,7 +10,7 @@ export default function Form(props) {
   return(
     <form>
       <input
-        type="textarea"
+        type="text"
         name="titleinput"
         placeholder="Title"
         value={ props.inputValueTitle }
@@ -18,18 +18,18 @@ export default function Form(props) {
       </input>
 
       <input
-        type="textarea"
+        type="text"
         name="bodyinput"
         placeholder="Body"
         value={ props.inputValueBody }
         onChange={ props.onChange }>
       </input>
 
-      {
         <button
         className="save-button"
+        // disabled = { !props.inputValueTitle || !props.inputValueBody }
         onClick={ props.addNewIdea }>save</button>
-      }
+
     </form>
   )
 }
