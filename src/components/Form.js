@@ -1,11 +1,17 @@
 import React from 'react';
 
 export default function Form(props) {
+  function handleKeyDown(e) {
+    if (e.keyCode === 13) {
+      props.addIdea();
+    }
+  }
+
   return(
     <form>
       <input
-        type="text"
-        name="input-title"
+        type="textarea"
+        name="titleinput"
         placeholder="Title"
         value={ props.inputValueTitle }
         onChange={ props.onChange }>
@@ -13,7 +19,7 @@ export default function Form(props) {
 
       <input
         type="textarea"
-        name="input-body"
+        name="bodyinput"
         placeholder="Body"
         value={ props.inputValueBody }
         onChange={ props.onChange }>

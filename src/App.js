@@ -1,11 +1,11 @@
 import React from 'react';
 import stylesApp from './styles/App.css';
-import stylesForm from './styles/Form.css';
 import stylesButtons from './styles/SortButtons.css';
-import stylesIdeaCard from './styles/IdeaCard.css'; //may not need to import here?
+import stylesForm from './styles/Form.css';
+import stylesIdeaCard from './styles/IdeaCard.css';
 import Form from './components/Form.js';
-import Search from './components/Search.js';
 import IdeaCard from './components/IdeaCard.js';
+import Search from './components/Search.js';
 import SortButtons from './components/SortButtons.js';
 
 export default class App extends React.Component {
@@ -21,7 +21,7 @@ export default class App extends React.Component {
     }
   }
 
-  addIdea(e, newIdea) {
+  addIdea(e) {
     e.preventDefault();
     this.setState({
       newIdea: {
@@ -30,11 +30,11 @@ export default class App extends React.Component {
         quality: 'swill'
       },
 
-      ideaList: [...this.state.ideaList, {
-        title: this.state.newIdea.title,
-        body: this.state.newIdea.body,
-        quality: 'swill',
-      }]
+      ideaList: [...this.state.ideaList,
+        { title: this.state.newIdea.titleinput,
+          body: this.state.newIdea.bodyinput,
+          quality: 'swill' },
+      ]
     })
   }
 
@@ -53,10 +53,10 @@ export default class App extends React.Component {
           <h2 className="box-header"><span className="idea-header">Idea</span>Box</h2>
           {
             <Form
-            inputValueTitle = { this.state.newIdea.title }
-            inputValueBody = { this.state.newIdea.body }
-            addNewIdea = { this.addIdea.bind(this) }
-            onChange = { this.handleChange.bind(this) } />
+              inputValueTitle = { this.state.newIdea.title }
+              inputValueBody = { this.state.newIdea.body }
+              addNewIdea = { this.addIdea.bind(this) }
+              onChange = { this.handleChange.bind(this) } />
           }
           {
             <SortButtons />
@@ -69,7 +69,7 @@ export default class App extends React.Component {
         {
           this.state.ideaList.map(( idea, index ) =>
             <IdeaCard
-              title = { idea.title}
+              title = { idea.title }
               body = { idea.body }
               quality = { idea.quality } />
           )
