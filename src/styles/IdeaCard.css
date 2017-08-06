@@ -1,22 +1,12 @@
-/*button hover states*/
-.up-button, .down-button, .delete-button {
-  height: 20px;
-  width: 20px;
-}
-
-.up-button:hover, .down-button:hover, .delete-button:hover {
-  cursor: pointer;
+.card-body {
+  color: #939598;
+  font-size: 12px;
+  text-align: left;
 }
 
 .card-title {
   color: #6D6E71;
   font-size: 16px;
-  text-align: left;
-}
-
-.card-body {
-  color: #939598;
-  font-size: 12px;
   text-align: left;
 }
 
@@ -26,9 +16,45 @@
   text-align: left;
 }
 
+.delete-button, .down-button, .up-button {
+  height: 20px;
+  width: 20px;
+}
+
+.delete-button:hover, .down-button:hover, .up-button:hover {
+  cursor: pointer;
+}
+
 .delete-button {
-  position: relative;
+  background-image: url('./assets/delete.svg');
+  background-color: #FFFFFF;
+  border: none;
   left: 290px;
+  position: relative;
+}
+
+.delete-button:hover {
+  background-image: url('./assets/delete-hover.svg');
+}
+
+.down-button {
+  background-image: url('./assets/downvote.svg');
+  background-color: #FFFFFF;
+  border: none;
+}
+
+.down-button:hover {
+  background-image: url('./assets/downvote-hover.svg');
+}
+
+.up-button {
+  background-image: url('./assets/upvote.svg');
+  background-color: #FFFFFF;
+  border: none;
+}
+
+.up-button:hover {
+  background-image: url('./assets/upvote-hover.svg');
 }
 
 hr {
