@@ -1,9 +1,14 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
   background-color: #E5F3F2;
+  font-family: 'Roboto Slab', serif;
   height: 220px;
   padding: 20px;
 }

@@ -12,11 +12,9 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      newIdea: {
-        title: '',
-        body: '',
-        quality: ''
-      },
+      title: '',
+      body: '',
+      quality: '',
       ideaList: []
     }
   }
@@ -25,24 +23,21 @@ export default class App extends React.Component {
     e.preventDefault();
     this.setState({
       ideaList: [...this.state.ideaList,
-        { title: this.state.newIdea.titleinput,
-          body: this.state.newIdea.bodyinput,
+        { title: this.state.title,
+          body: this.state.body,
           quality: 'swill' },
       ],
 
-      newIdea: {
+
         title: '',
         body: '',
         quality: ''
-      }
     })
   }
 
-  handleChange(e) {
+  handleChange(e) {  
     this.setState({
-      newIdea: {
       [e.target.name]: e.target.value
-      }
     })
   }
 
@@ -53,8 +48,8 @@ export default class App extends React.Component {
           <h2 className="box-header"><span className="idea-header">Idea</span>Box</h2>
           {
             <Form
-              inputValueTitle = { this.state.newIdea.title }
-              inputValueBody = { this.state.newIdea.body }
+              inputValueTitle = { this.state.title }
+              inputValueBody = { this.state.body }
               addNewIdea = { this.addIdea.bind(this) }
               onChange = { this.handleChange.bind(this) } />
           }
@@ -63,17 +58,17 @@ export default class App extends React.Component {
           }
         </div>
         <div className="App-list">
-        {
-          <Search />
-        }
-        {
-          this.state.ideaList.map(( idea, index ) =>
+          {
+            <Search />
+          }
+          {
+            this.state.ideaList.map(( idea, index ) =>
             <IdeaCard
               title = { idea.title }
               body = { idea.body }
               quality = { idea.quality } />
-          )
-        }
+            )
+          }
         </div>
       </div>
     );

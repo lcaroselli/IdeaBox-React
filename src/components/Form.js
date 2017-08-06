@@ -11,7 +11,7 @@ export default function Form(props) {
     <form>
       <input
         type="text"
-        name="titleinput"
+        name="title"
         placeholder="Title"
         value={ props.inputValueTitle }
         onChange={ props.onChange }>
@@ -19,7 +19,7 @@ export default function Form(props) {
 
       <input
         type="text"
-        name="bodyinput"
+        name="body"
         placeholder="Body"
         value={ props.inputValueBody }
         onChange={ props.onChange }>
