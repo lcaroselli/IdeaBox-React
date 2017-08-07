@@ -26,7 +26,7 @@ export default class App extends React.Component {
         {
           title: this.state.title,
           body: this.state.body,
-          quality: 'swill'
+          quality: 'swill',
         },
       ],
 
@@ -41,7 +41,17 @@ export default class App extends React.Component {
     })
   }
 
+  updateQuality() {
+    console.log('it works')
+    // this.state.ideaList.forEach((idea) => {
+    //   if (idea.quality === 'swill') {
+    //     idea.quality = 'plausible'
+    //   }
+    // })
+  }
+
   render() {
+
     return (
       <div className="App">
         <div className="App-header">
@@ -66,7 +76,8 @@ export default class App extends React.Component {
             <IdeaCard
               title = { idea.title }
               body = { idea.body }
-              quality = { idea.quality } />
+              quality = { idea.quality }
+              onClick = { this.updateQuality.bind(this) } />
             )
           }
         </div>
