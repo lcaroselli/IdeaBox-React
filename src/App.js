@@ -35,6 +35,14 @@ export default class App extends React.Component {
     })
   }
 
+  deleteIdea(index) {
+    this.state.ideaList.splice(index, 1);
+
+    this.setState({
+      ideaList: this.state.ideaList
+    })
+  }
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -82,7 +90,8 @@ export default class App extends React.Component {
               title = { idea.title }
               body = { idea.body }
               quality = { idea.quality }
-              onClick = { this.updateQuality.bind(this) } />
+              onClick = { this.updateQuality.bind(this) }
+              handleDelete = { () => { this.deleteIdea(index) } }/>
             )
           }
         </div>
