@@ -14,7 +14,6 @@ export default class App extends React.Component {
     this.state = {
       title: '',
       body: '',
-      quality: '',
       ideaList: []
     }
   }
@@ -26,7 +25,6 @@ export default class App extends React.Component {
         {
           title: this.state.title,
           body: this.state.body,
-          quality: 'swill',
         },
       ],
 
@@ -47,15 +45,6 @@ export default class App extends React.Component {
     this.setState({
       [e.target.name]: e.target.value
     })
-  }
-
-  updateQuality() {
-    console.log('it works')
-    // this.state.ideaList.forEach((idea) => {
-    //   if (idea.quality === 'swill') {
-    //     idea.quality = 'plausible'
-    //   }
-    // })
   }
 
   sortIdea() {
@@ -89,8 +78,6 @@ export default class App extends React.Component {
             <IdeaCard
               title = { idea.title }
               body = { idea.body }
-              quality = { idea.quality }
-              onClick = { this.updateQuality.bind(this) }
               handleDelete = { () => { this.deleteIdea(index) } }/>
             )
           }
