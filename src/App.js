@@ -50,6 +50,10 @@ export default class App extends React.Component {
     // })
   }
 
+  sortIdea() {
+    console.log('sorting...')
+  }
+
   render() {
 
     return (
@@ -64,7 +68,8 @@ export default class App extends React.Component {
               onChange = { this.handleChange.bind(this) } />
           }
           {
-            <SortButtons />
+            <SortButtons
+              onClick = { this.sortIdea.bind(this) }/>
           }
         </div>
         <div className="App-list">
