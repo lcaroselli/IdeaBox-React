@@ -6,8 +6,13 @@ export default function Search (props) {
   //     //props.searchIdea()
   //   }
   // }
-  
+
   return (
-    <input name="search" className="search" type="search" placeholder="Search"></input>
+    <input
+      name="search"
+      className="search"
+      type="search"
+      placeholder="Search"
+      onKeyUp={ props.onKeyUp } ></input>
   )
 }

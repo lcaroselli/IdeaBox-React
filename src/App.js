@@ -48,7 +48,11 @@ export default class App extends React.Component {
   }
 
   sortIdea() {
-    console.log('sorting...')
+    console.log('Sorting...')
+  }
+
+  searchIdea() {
+    console.log('Searching...')
   }
 
   render() {
@@ -71,7 +75,8 @@ export default class App extends React.Component {
         </div>
         <div className="App-list">
           {
-            <Search />
+            <Search
+              onKeyUp = { this.searchIdea.bind(this) }/>
           }
           {
             this.state.ideaList.map(( idea, index ) =>
